@@ -1,12 +1,9 @@
 import React from 'react'
-import { Items, Navbar } from './components';
-
-import './App.css';
+import { Items } from './components';
 
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
       <Items />
     </div>
   )

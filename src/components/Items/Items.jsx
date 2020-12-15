@@ -1,30 +1,24 @@
 import React from 'react';
-import { Row, Col } from 'antd';
-import { FireOutlined, DashboardOutlined, ExperimentOutlined, ThunderboltOutlined } from '@ant-design/icons';
-
-import Item from './Item/Item';
-
 import './Items.css';
 
 const datas = [
-  { id: 1 , name: "온도", unit: "temp", payload: 27, icon: <FireOutlined /> },
-  { id: 2 , name: "속도", unit: "speed", payload: 27, icon:<DashboardOutlined /> },
-  { id: 3 , name: "습도", unit: "humidity", payload: 27, icon: <ExperimentOutlined />},
-  { id: 4 , name: "전력", unit: "power", payload: 27, icon: <ThunderboltOutlined />},
+  { id: 1 , title: "온도", unit: "℃", payload: Math.floor(Math.random()*(30-20))+20},
+  { id: 2 , title: "송풍기", unit: "?", payload: Math.floor(Math.random()*(30-20))+20},
+  { id: 3 , title: "습도", unit: "?", payload: Math.floor(Math.random()*(30-20))+20},
 ]
 
 const Items = () => {
-  return (
-    <div className="container">
-      <Row gutter={[16, 16]} justify="center">
-        {datas.map((item) => (
-            <Col xs={24} sm={12} key={item.id}>
-              <Item item={item} />
-            </Col>
-        ))}
-      </Row>
-    </div>
-  )
-}
 
-export default Items;
+  return (
+      <div className="container">
+        {datas.map((item) => (
+          <div className="item-card" key={item.id}>
+            <div className="card-title">{item.title}</div>
+            <div className="card-payload">{item.payload}<sup>{item.unit}</sup></div>
+          </div>  
+        ))}
+      </div>
+    )
+  }
+  
+  export default Items;

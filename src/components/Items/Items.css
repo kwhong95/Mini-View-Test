@@ -1,8 +1,30 @@
 .container {
+  background-color: #1A1A1A;
+  width: 800px;
+  height: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  flex-grow: 1;
+  margin: 10px 10px 10px 10px;
+  min-width: 380px;
+  box-shadow: 2px 2px 2px 2px #111111;
+}
+
+.card-title {
+  color: whitesmoke;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
+  font-size: 2rem;
+}
+.card-payload {
+  color: whitesmoke;
+  font-size: 4rem;
 }
